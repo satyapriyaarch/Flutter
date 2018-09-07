@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:oca_app/login.dart';
-
+import 'package:firebase_core/firebase_core.dart';
 void main() {
   runApp(new MyApp());
 }

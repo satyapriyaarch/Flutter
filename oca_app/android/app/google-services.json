@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "401472371942",
+    "firebase_url": "https://organiccottonaccelerator.firebaseio.com",
+    "project_id": "organiccottonaccelerator",
+    "storage_bucket": "organiccottonaccelerator.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:401472371942:android:c3a077708dd2567a",
+        "android_client_info": {
+          "package_name": "com.dmss.ocaapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "401472371942-ri8cu38713n7npb34b61gbanr4596h48.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTMftSRaMbjODQdMF5naadHrke3eIV_hU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
