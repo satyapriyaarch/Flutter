@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:oca_app/login.dart';
+import 'fsdashboard.dart';
 import 'package:firebase_core/firebase_core.dart';
 void main() {
   runApp(new MyApp());
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
       home: new SplashScreen(),
       routes: <String, WidgetBuilder>{
         '/Login': (BuildContext context) => new LoginScreen(),
-//        '/FSDashboard' : (BuildContext context) => new FSDashboard(),
+        '/FSDashboard' : (BuildContext context) => new FSDashboard(),
 //        '/SVDashboard' : (BuildContext context) => new FSDashboard(),
 //        '/TVDashboard' : (BuildContext context) => new FSDashboard(),
 //        '/IPDashboard' : (BuildContext context) => new FSDashboard(),
@@ -58,7 +59,7 @@ class _SplashScreenState extends State<SplashScreen> {
         padding: const EdgeInsets.all(0.0),
         child: new Image.asset(
           'images/yellow-pattern.png',
-          fit: BoxFit.fitWidth,
+          fit: BoxFit.fill,
         ),
       ),
     );
