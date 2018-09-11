@@ -14,7 +14,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-
   PageController _tabController;
 
   var _title_app = null;
@@ -28,19 +27,21 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   @override
-  void dispose(){
+  void dispose() {
     super.dispose();
     _tabController.dispose();
   }
-  @override
-  Widget build (BuildContext context) => new Scaffold(
 
-    //App Bar
+  @override
+  Widget build(BuildContext context) => new Scaffold(
+
+      //App Bar
       appBar: new AppBar(
         title: new Text(
           _title_app,
           style: new TextStyle(
-            fontSize: Theme.of(context).platform == TargetPlatform.iOS ? 17.0 : 20.0,
+            fontSize:
+                Theme.of(context).platform == TargetPlatform.iOS ? 17.0 : 20.0,
           ),
         ),
         elevation: Theme.of(context).platform == TargetPlatform.iOS ? 0.0 : 4.0,
@@ -58,83 +59,84 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
 
       //Tabs
-      bottomNavigationBar: Theme.of(context).platform == TargetPlatform.iOS ?
-      new CupertinoTabBar(
-        activeColor: Colors.blueGrey,
-        currentIndex: _tab,
-        onTap: onTap,
-        items: TabItems.map((TabItem) {
-          return new BottomNavigationBarItem(
-            title: new Text(TabItem.title),
-            icon: new Icon(TabItem.icon),
-          );
-        }).toList(),
-      ):
-      new BottomNavigationBar(
-        currentIndex: _tab,
-        onTap: onTap,
-        items: TabItems.map((TabItem) {
-          return new BottomNavigationBarItem(
-            title: new Text(TabItem.title),
-            icon: new Icon(TabItem.icon),
-          );
-        }).toList(),
-      ),
+      bottomNavigationBar: Theme.of(context).platform == TargetPlatform.iOS
+          ? new CupertinoTabBar(
+              activeColor: Colors.blueGrey,
+              currentIndex: _tab,
+              onTap: onTap,
+              items: TabItems.map((TabItem) {
+                return new BottomNavigationBarItem(
+                  title: new Text(TabItem.title),
+                  icon: new Icon(TabItem.icon),
+                );
+              }).toList(),
+            )
+          : new BottomNavigationBar(
+              currentIndex: _tab,
+              onTap: onTap,
+              items: TabItems.map((TabItem) {
+                return new BottomNavigationBarItem(
+                  title: new Text(TabItem.title),
+                  icon: new Icon(TabItem.icon),
+                );
+              }).toList(),
+            ),
 
       //Drawer
       drawer: new Drawer(
           child: new ListView(
-            children: <Widget>[
-              new Container(
-                height: 120.0,
-                child: new DrawerHeader(
-                  padding: new EdgeInsets.all(0.0),
-                  decoration: new BoxDecoration(
-                    color: new Color(0xFFECEFF1),
-                  ),
-                  child: new Center(
+        children: <Widget>[
+          new Container(
+            height: 180.0,
+            child: new DrawerHeader(
+              padding: new EdgeInsets.all(0.0),
+              decoration: new BoxDecoration(
+                color: new Color(0xFFECEFF1),
+              ),
+              child: new Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  new Center(
                     child: new FlutterLogo(
-                      colors: Colors.blueGrey,
+                      colors: Colors.blue,
                       size: 54.0,
                     ),
                   ),
-                ),
+                  new Text("Satya Priya Rajput")
+                ],
               ),
-              new ListTile(
-                  leading: new Icon(Icons.chat),
-                  title: new Text('Support'),
-                  onTap: () {
-                    Navigator.pop(context);
-                    Navigator.of(context).pushNamed('/support');
-                  }
-              ),
-              new ListTile(
-                  leading: new Icon(Icons.info),
-                  title: new Text('About'),
-                  onTap: () {
-                    Navigator.pop(context);
-                    Navigator.of(context).pushNamed('/about');
-                  }
-              ),
-              new Divider(),
-              new ListTile(
-                  leading: new Icon(Icons.exit_to_app),
-                  title: new Text('Sign Out'),
-                  onTap: () {
-                    Navigator.pop(context);
-                  }
-              ),
-            ],
-          )
-      )
-  );
+            ),
+          ),
+          new ListTile(
+              leading: new Icon(Icons.chat),
+              title: new Text('Support'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.of(context).pushNamed('/support');
+              }),
+          new ListTile(
+              leading: new Icon(Icons.info),
+              title: new Text('About'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.of(context).pushNamed('/about');
+              }),
+          new Divider(),
+          new ListTile(
+              leading: new Icon(Icons.exit_to_app),
+              title: new Text('Sign Out'),
+              onTap: () {
+                Navigator.pop(context);
+              }),
+        ],
+      )));
 
-  void onTap(int tab){
+  void onTap(int tab) {
     _tabController.jumpToPage(tab);
   }
 
   void onTabChanged(int tab) {
-    setState((){
+    setState(() {
       this._tab = tab;
     });
 
@@ -155,7 +157,7 @@ class _HomeScreenState extends State<HomeScreen> {
 }
 
 class TabItem {
-  const TabItem({ this.title, this.icon });
+  const TabItem({this.title, this.icon});
   final String title;
   final IconData icon;
 }
