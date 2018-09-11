@@ -9,9 +9,10 @@ class Dashboard extends StatelessWidget {
       children: <Widget>[
         new Icon(
           Icons.dashboard,
-          size: 150.0,
+          size: 50.0,
           color: Colors.black12
         ),
+
         new Text('Dashboard tab content')
       ]
     ),

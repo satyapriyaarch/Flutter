@@ -102,21 +102,38 @@ class _HomeScreenState extends State<HomeScreen> {
                       size: 54.0,
                     ),
                   ),
-                  new Text("Satya Priya Rajput")
+                  new Text("Satya Priya Rajput"),
                 ],
               ),
             ),
           ),
           new ListTile(
               leading: new Icon(Icons.chat),
-              title: new Text('Support'),
+              title: new Text('Profile'),
               onTap: () {
                 Navigator.pop(context);
                 Navigator.of(context).pushNamed('/support');
               }),
+          new Divider(),
           new ListTile(
               leading: new Icon(Icons.info),
-              title: new Text('About'),
+              title: new Text('Health Parameters'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.of(context).pushNamed('/about');
+              }),
+          new Divider(),
+          new ListTile(
+              leading: new Icon(Icons.info),
+              title: new Text('Vaccine Tracker'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.of(context).pushNamed('/about');
+              }),
+          new Divider(),
+          new ListTile(
+              leading: new Icon(Icons.info),
+              title: new Text('Call Ambulance'),
               onTap: () {
                 Navigator.pop(context);
                 Navigator.of(context).pushNamed('/about');
@@ -142,7 +159,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
     switch (tab) {
       case 0:
-        this._title_app = TabItems[0].title;
+        this._title_app = TabItems[0].title + " Sharma";
         break;
 
       case 1:
@@ -163,7 +180,7 @@ class TabItem {
 }
 
 const List<TabItem> TabItems = const <TabItem>[
-  const TabItem(title: 'About', icon: Icons.account_box),
+  const TabItem(title: 'Dr. Mukesh', icon: Icons.account_box),
   const TabItem(title: 'Appointments', icon: Icons.calendar_today),
   const TabItem(title: 'Reports', icon: Icons.report)
 ];

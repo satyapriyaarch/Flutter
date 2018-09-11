@@ -23,20 +23,23 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      body: new Container(
+      body: new Padding(
+        padding: EdgeInsets.all(100.0),
+       child: new Column(
+         children: <Widget>[
+           new Image.network(
+             'https://oscar.ofm.co.za/img/fr_20173116130.png',
+             fit: BoxFit.fill,
+             width: 200.0,
+             height: 150.0,
+           ),
+           new Text("Dr. Mukesh Sharma"),
+         ],
+         mainAxisAlignment: MainAxisAlignment.center,
 
-        padding: const EdgeInsets.all(100.0),
-       child:  new Image.network(
-         'https://oscar.ofm.co.za/img/fr_20173116130.png',
-         fit: BoxFit.fill,
-          width: 200.0,
-          height: 150.0,
-        ),
-//        child: new Image.asset(
-//
-//          'images/background.png',
-//          fit: BoxFit.fill,
-//        ),
+       ) ,
+
+
       ),
     );
   }
