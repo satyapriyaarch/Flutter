@@ -3,40 +3,70 @@ import 'package:flutter/material.dart';
 class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) => new Container(
-          child: new Column(
+      child: new Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
-          new Padding(
+          Padding(
             child: new Row(
               children: <Widget>[
-                Container(
-                  child: new Image.network(
-                    'https://images1-fabric.practo.com/doctor/454518/dr-satish-s-andani-58e388502e2b8.jpg',
-                    height: 70.0,
+                Padding(
+                  child: new ClipOval(
+                    child: new Image.network(
+                      'https://images1-fabric.practo.com/doctor/454518/dr-satish-s-andani-58e388502e2b8.jpg',
+                      height: 70.0,
+                    ),
+
                   ),
+                  padding: EdgeInsets.all(10.0),
                 ),
                 Container(
                     child: new Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
                   children: <Widget>[
-                    new Text("Dr Sathish S Andani"),
-                    new Text("Dr Sathish S Andani"),
+                    new Text(
+                      "Dr Sathish S Andani",
+                      textAlign: TextAlign.left,
+                      style: new TextStyle(
+                          fontSize: 17.0, fontWeight: FontWeight.bold),
+                    ),
+                    new Text(
+                      "MBBS, DCH, PALS, PGPN (Boston)",
+                      textAlign: TextAlign.left,
+                      style: new TextStyle(
+                          fontSize: 17.0, fontWeight: FontWeight.bold),
+                    ),
                   ],
                 )),
               ],
             ),
-            padding: EdgeInsets.all(10.0),
+            padding: EdgeInsets.all(0.0),
           ),
-
-//                    Image.network(
-//                  'https://images1-fabric.practo.com/doctor/454518/dr-satish-s-andani-58e388502e2b8.jpg',
-//                  height: 70.0,
-//                ),
-//                title: new Text('Profile'),
-//                onTap: () {}),
-//          ),
-//          new Divider(),
-          new Text('Home tab content')
+          new Divider(
+            height: 5.0,
+            color: Colors.blueGrey,
+          ),
+          new Container(
+              child: new Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              new Text(
+                "Consultation Fees:",
+                style:
+                    new TextStyle(fontWeight: FontWeight.bold, fontSize: 16.0),
+              ),
+              new Text(
+                "300",
+                style:
+                    new TextStyle(fontWeight: FontWeight.bold, fontSize: 14.0),
+              ),
+            ],
+          ),
+          ),
+          new Divider(
+            height: 5.0,
+            color: Colors.blueGrey,
+          ),
         ],
       ));
 }
